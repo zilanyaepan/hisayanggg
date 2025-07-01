@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Surat Buat Kamu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffeaf4;
+      color: #4a4a4a;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #d94f8c;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #d94f8c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #bf3f78;
+    }
+
+    #letterContainer {
+      max-height: 70vh;
+      overflow-y: auto;
+      padding-right: 10px;
+      text-align: left;
+      margin-top: 20px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    /* LOVE ANIMATION */
+    .love {
+      position: fixed;
+      top: 100vh;
+      left: 50%;
+      font-size: 20px;
+      color: white;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateX(-50px) translateY(-120vh);
+        opacity: 0;
+      }
+    }
+
+    /* Scrollbar */
+    #letterContainer::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    #letterContainer::-webkit-scrollbar-thumb {
+      background-color: #d94f8c;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgMusic" src="lagu.mp3" loop></audio>
+
+  <div class="container">
+    <div id="cover">
+      <h1>dede mau bilang sesuatu</h1>
+      <button id="openBtn">open</button>
+    </div>
+
+    <div id="letterContainer" class="hidden">
+      <p>abang, dede mau nanya pelan pelan ya sayang,  lagi ada masalah apa di rumah?  
+      dede gaa tau harus mulai dari mana, tapi dari semalem sikap abang beda banget, dede ngerasa abang lagi mikirin sesuatu. dede ga mau nebak nebak, tapi hati dede ngerasa abang lagi gaa baik baik aja.</p>
+
+      <p>abang sayang, kalo emang ada yang lagi bikin abang kepikiran, bikin abang sedih, atau cape cerita ya ke dede. pelan pelan aja. gaa usah takut, ga usah ragu. abang bisa cerita semuanya, gaa perlu disaring, gaa perlu dipikirin ini bakal nyusahin dede atau engga.</p>
+
+      <p>karena dede di sini bukan cuma buat nemenin abang pas seneng doang. dede pengen ada buat abang juga pas abang lagi sedih, pas lagi gak bisa senyum lepas, pas lagi ngerasa semuanya ga berjalan sesuai harapan.</p>
+
+      <p>kadang hal hal yang terjadi di rumah tuu gaa gampang diceritain, ya kan? dede ngerti kok, kadang terlalu rumit, terlalu personal, atau justru terlalu melelahkan buat diceritain ulang. tapi abang jangan pernah ngerasa harus jalanin semuanya sendirian.</p>
+
+      <p>abang punya dede. dan selama abang masih mau berbagi, dede di sini. dengerin, nemenin, dan nenangin abang sebisa dede.</p>
+
+      <p>abang boleh nangis. abang boleh diem dan gaa ngomong apa apa dulu. dede gaa akan kemana-mana.</p>
+
+      <p>dan kalau pun abang gak mau cerita sekarang, itu juga gapapaa. yang penting abang tau, dede di sini. gaa cuma nunggu cerita, tapi juga ngelilingin abang dengan rasa sayang yang gaa bisa dede ungkapin semuanya lewat kata kata.</p>
+
+      <p>dede tau abang itu kuat. udah banyak hal yang abang lewatin. tapi meskipun kuat, abang juga manusia. ada batas capeknya, ada titik di mana pengen istirahat dan dipeluk.</p>
+
+      <p>jadi kalo abang lagi ngerasa berat, gaa usah pura pura gapapa. gaa usah sok kuat di depan dede. abang gaa harus pura pura bahagia buat bikin dede seneng. cukup jadi diri abang yang apa adanya, dan biarin dede ada di samping abang terus.</p>
+
+      <p>abang sayang, semangat terus ya gaa semua hari akan mudah, tapi ga semua hari juga akan sesulit ini. pelan pelan ya? satu satu aja, ga usah buru buru. ambil napas dalam dalam, tenangin hati, dan inget, abang ga sendiri.</p>
+
+      <p>dede percaya banget abang bisa lewatin ini semua. dede sayang banget sama abang. dan apa pun yang abang lewatin, kita lewatin bareng bareng ya. dede di sini selalu disini, i lovee youu sayanggkuu🤍</p>
+    </div>
+  </div>
+
+  <!-- Love Animation -->
+  <script>
+    const openBtn = document.getElementById('openBtn');
+    const letterContainer = document.getElementById('letterContainer');
+    const cover = document.getElementById('cover');
+    const music = document.getElementById('bgMusic');
+
+    openBtn.addEventListener('click', () => {
+      cover.style.display = 'none';
+      letterContainer.classList.remove('hidden');
+      music.play();
+    });
+
+    // Love animation
+    function createLove() {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.innerText = '🤍';
+      love.style.left = Math.random() * 100 + 'vw';
+      love.style.fontSize = (Math.random() * 20 + 10) + 'px';
+      document.body.appendChild(love);
+
+      setTimeout(() => {
+        love.remove();
+      }, 6000);
+    }
+
+    setInterval(createLove, 500);
+  </script>
+</body>
+</html>
